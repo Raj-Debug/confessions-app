@@ -1,29 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ConfessIt</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: #FFF5F8; }
+    .cf-hero { background: #fff; border-bottom: 0.5px solid #F4C0D1; padding: 20px; text-align: center; }
+    .cf-hero-emoji { font-size: 32px; margin-bottom: 4px; }
+    .cf-hero-title { font-size: 22px; font-weight: 500; color: #72243E; margin: 0; }
+    .cf-hero-sub { font-size: 12px; color: #ED93B1; margin: 4px 0 0; }
+    .cf-body { max-width: 480px; margin: 0 auto; padding: 20px 16px 32px; }
+    .cf-form { background: #fff; border: 0.5px solid #F4C0D1; border-radius: 20px; padding: 16px; margin-bottom: 24px; }
+    .cf-form textarea { width: 100%; background: #FFF5F8; border: 0.5px solid #F4C0D1; border-radius: 12px; padding: 10px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: #72243E; resize: none; min-height: 80px; box-sizing: border-box; }
+    .cf-form textarea::placeholder { color: #F4C0D1; }
+    .cf-form textarea:focus { outline: none; border-color: #D4537E; }
+    .cf-submit { margin-top: 10px; background: #D4537E; color: #FBEAF0; border: none; border-radius: 12px; padding: 9px 20px; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .cf-submit:hover { background: #993556; }
+    .cf-section { font-size: 11px; color: #ED93B1; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; text-align: center; }
+    .cf-empty { text-align: center; color: #F4C0D1; font-size: 14px; padding: 32px 0; }
+    .cf-card { background: #fff; border: 0.5px solid #F4C0D1; border-radius: 20px; padding: 14px 16px; margin-bottom: 10px; }
+    .cf-card-badge { display: inline-flex; align-items: center; gap: 4px; background: #FBEAF0; color: #993556; font-size: 11px; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+    .cf-card-text { font-size: 14px; color: #4B1528; line-height: 1.7; margin: 0 0 12px; }
+    .cf-card-foot { display: flex; align-items: center; justify-content: space-between; }
+    .cf-card-num { font-size: 11px; color: #F4C0D1; }
+    .cf-like { display: flex; align-items: center; gap: 5px; background: #FBEAF0; color: #D4537E; border: 0.5px solid #F4C0D1; border-radius: 20px; padding: 4px 12px; font-size: 12px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .cf-like:hover { background: #F4C0D1; }
+  </style>
+</head>
+<body>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
-  .cf { font-family: 'DM Sans', sans-serif; background: #FFF5F8; padding: 0 0 32px; }
-  .cf-hero { background: #fff; border-bottom: 0.5px solid #F4C0D1; padding: 20px; text-align: center; }
-  .cf-hero-emoji { font-size: 32px; margin-bottom: 4px; }
-  .cf-hero-title { font-size: 22px; font-weight: 500; color: #72243E; margin: 0; }
-  .cf-hero-sub { font-size: 12px; color: #ED93B1; margin: 4px 0 0; }
-  .cf-body { max-width: 480px; margin: 0 auto; padding: 20px 16px 0; }
-  .cf-form { background: #fff; border: 0.5px solid #F4C0D1; border-radius: 20px; padding: 16px; margin-bottom: 24px; }
-  .cf-form textarea { width: 100%; background: #FFF5F8; border: 0.5px solid #F4C0D1; border-radius: 12px; padding: 10px 14px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: #72243E; resize: none; min-height: 80px; box-sizing: border-box; }
-  .cf-form textarea::placeholder { color: #F4C0D1; }
-  .cf-form textarea:focus { outline: none; border-color: #D4537E; }
-  .cf-submit { margin-top: 10px; background: #D4537E; color: #FBEAF0; border: none; border-radius: 12px; padding: 9px 20px; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; display: flex; align-items: center; gap: 6px; }
-  .cf-submit:hover { background: #993556; }
-  .cf-section { font-size: 11px; color: #ED93B1; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; text-align: center; }
-  .cf-card { background: #fff; border: 0.5px solid #F4C0D1; border-radius: 20px; padding: 14px 16px; margin-bottom: 10px; }
-  .cf-card-badge { display: inline-flex; align-items: center; gap: 4px; background: #FBEAF0; color: #993556; font-size: 11px; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
-  .cf-card-text { font-size: 14px; color: #4B1528; line-height: 1.7; margin: 0 0 12px; }
-  .cf-card-foot { display: flex; align-items: center; justify-content: space-between; }
-  .cf-card-num { font-size: 11px; color: #F4C0D1; }
-  .cf-like { display: flex; align-items: center; gap: 5px; background: #FBEAF0; color: #D4537E; border: 0.5px solid #F4C0D1; border-radius: 20px; padding: 4px 12px; font-size: 12px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
-  .cf-like:hover { background: #F4C0D1; }
-</style>
-
-<div class="cf">
   <div class="cf-hero">
     <div class="cf-hero-emoji">🌸</div>
     <h1 class="cf-hero-title">ConfessIt</h1>
@@ -31,41 +40,37 @@
   </div>
 
   <div class="cf-body">
+
     <div class="cf-form">
-      <textarea placeholder="i still sleep with a night light and i'm 19... 🙈"></textarea>
-      <button class="cf-submit">
-        <i class="ti ti-send" style="font-size:14px;" aria-hidden="true"></i>
-        confess anonymously
-      </button>
+      <form action="/confessions" method="POST">
+        <textarea name="confession" placeholder="i still sleep with a night light and i'm 19... 🙈"></textarea>
+        <button type="submit" class="cf-submit">
+          <i class="ti ti-send" style="font-size:14px;"></i>
+          confess anonymously
+        </button>
+      </form>
     </div>
 
     <p class="cf-section">recent confessions 💌</p>
 
-    <div class="cf-card">
-      <div class="cf-card-badge">🌸 anonymous</div>
-      <p class="cf-card-text">i pretend to be busy on video calls just so people think i'm important.</p>
-      <div class="cf-card-foot">
-        <span class="cf-card-num">#3</span>
-        <button class="cf-like">❤️ 12</button>
-      </div>
-    </div>
+    <% if (confessions.length === 0) { %>
+      <p class="cf-empty">no confessions yet — be the first! 👀</p>
+    <% } %>
 
-    <div class="cf-card">
-      <div class="cf-card-badge">🌸 anonymous</div>
-      <p class="cf-card-text">i told my friends i finished the book but i only watched a youtube summary.</p>
-      <div class="cf-card-foot">
-        <span class="cf-card-num">#2</span>
-        <button class="cf-like">❤️ 8</button>
+    <% confessions.slice().reverse().forEach(comment => { %>
+      <div class="cf-card">
+        <div class="cf-card-badge">🌸 anonymous</div>
+        <p class="cf-card-text"><%= comment.confession %></p>
+        <div class="cf-card-foot">
+          <span class="cf-card-num">#<%= comment.id %></span>
+          <form action="/confessions/<%= comment.id %>/like" method="POST">
+            <button type="submit" class="cf-like">❤️ <%= comment.likes || 0 %></button>
+          </form>
+        </div>
       </div>
-    </div>
+    <% }) %>
 
-    <div class="cf-card">
-      <div class="cf-card-badge">🌸 anonymous</div>
-      <p class="cf-card-text">i have been saying "i'll start going to the gym next monday" for two years.</p>
-      <div class="cf-card-foot">
-        <span class="cf-card-num">#1</span>
-        <button class="cf-like">❤️ 34</button>
-      </div>
-    </div>
   </div>
-</div>
+
+</body>
+</html>
